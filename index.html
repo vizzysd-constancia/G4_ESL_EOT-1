@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172554">
+<title>Grade 4 ESL | End-of-Term Review</title>
+<style>
+:root{--navy:#172554;--blue:#2563eb;--sky:#eaf3ff;--teal:#0f766e;--mint:#e6f7f2;--gold:#f59e0b;--ink:#1e293b;--muted:#64748b;--line:#dbe4f0;--paper:#fff;--bg:#f4f7fb;--red:#b91c1c;--green:#15803d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}
+.topbar{background:linear-gradient(115deg,#172554,#1d4ed8);color:#fff;padding:16px max(20px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:850;letter-spacing:.04em}.brand small{display:block;font-weight:500;opacity:.8;letter-spacing:0}
+.top-pill{font-size:.78rem;border:1px solid #ffffff55;padding:6px 11px;border-radius:99px}
+.shell{max-width:1120px;margin:24px auto;padding:0 18px 40px}.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:20px;align-items:start}
+.sidebar,.panel{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:0 8px 28px #19335c0b}
+.sidebar{padding:18px;position:sticky;top:16px}.student-mini{background:var(--sky);padding:12px;border-radius:14px;margin-bottom:16px;font-size:.9rem}
+.progress-label{display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem;margin:8px 0}.progress{height:9px;background:#e2e8f0;border-radius:99px;overflow:hidden}.progress>span{display:block;height:100%;background:linear-gradient(90deg,#0f766e,#38bdf8);width:0%;transition:width .25s}
+.task-nav{display:grid;gap:6px;margin-top:16px}.task-nav button{display:flex;gap:10px;align-items:center;text-align:left;background:transparent;padding:9px;border-radius:11px;color:#475569;font-size:.86rem}.task-nav button.active{background:#eaf3ff;color:#1d4ed8;font-weight:750}.task-nav button.done .num{background:#dcfce7;color:#166534}.num{width:25px;height:25px;border-radius:9px;background:#eef2f7;display:grid;place-items:center;font-size:.75rem;flex:none}
+.panel{padding:clamp(20px,4vw,38px);min-height:650px}.eyebrow{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--teal)}h1,h2,h3{line-height:1.18;color:var(--navy)}h1{font-size:clamp(2rem,5vw,3.1rem);margin:.4em 0}h2{font-size:clamp(1.5rem,3vw,2.1rem);margin:.35em 0 .55em}h3{font-size:1.12rem;margin:.3em 0 .6em}p{margin:.5em 0 1em}.lead{font-size:1.08rem;color:#475569;max-width:720px}.muted{color:var(--muted)}.tag{display:inline-flex;align-items:center;gap:6px;background:#eef2ff;color:#3730a3;padding:5px 10px;border-radius:99px;font-size:.78rem;font-weight:750}
+.hero{background:linear-gradient(135deg,#eaf3ff,#e7fbf5);border-radius:20px;padding:24px;margin:18px 0}.hero-emoji{font-size:2.5rem}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fff}.card.soft{background:#f8fbff}.goal{display:flex;gap:10px;align-items:flex-start}.goal input{width:18px;height:18px;margin-top:4px;accent-color:var(--teal)}
+.field{display:grid;gap:6px;margin:14px 0}.field label{font-weight:750;font-size:.9rem}.field input,.field select,.field textarea{width:100%;border:1px solid #cbd5e1;border-radius:12px;padding:12px 13px;background:#fff;color:var(--ink)}.field textarea{min-height:95px;resize:vertical}.hint{font-size:.8rem;color:var(--muted)}
+.btnrow{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:28px}.btn{padding:12px 18px;border-radius:12px;font-weight:800;transition:transform .15s,filter .15s}.btn:hover{transform:translateY(-1px);filter:brightness(.98)}.primary{background:var(--blue);color:white}.secondary{background:#e8eef7;color:var(--navy)}.success{background:var(--teal);color:white}.warning{background:#fff3d8;color:#854d0e}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:15px 0}.option{border:2px solid var(--line);background:white;border-radius:14px;padding:13px;text-align:left;font-weight:650;color:var(--ink);min-height:54px}.option.selected{border-color:var(--blue);background:#eff6ff}.option.correct{border-color:#16a34a;background:#f0fdf4}.option.wrong{border-color:#dc2626;background:#fef2f2}
+.feedback{padding:12px 14px;border-radius:12px;margin:12px 0;font-weight:650}.feedback.good{background:#dcfce7;color:#166534}.feedback.try{background:#fff7ed;color:#9a3412}.feedback.neutral{background:#eff6ff;color:#1e40af}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.word{padding:7px 11px;background:#f1f5f9;border:1px solid #dbe4f0;border-radius:10px;font-weight:700;font-size:.88rem}
+.matchgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.matchgrid .card{display:grid;gap:8px}.matchgrid select{border:1px solid #cbd5e1;border-radius:10px;padding:9px;background:#fff}
+.picture{font-size:2.5rem;display:block;margin-bottom:5px}.big-quote{font-size:1.12rem;background:#f8fafc;border-left:4px solid var(--gold);padding:15px;border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f1f5f9;color:var(--navy)}
+.quiztop{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-weight:700;font-size:.88rem}.qbar{height:7px;background:#e2e8f0;border-radius:99px;margin:10px 0 20px;overflow:hidden}.qbar span{display:block;height:100%;background:var(--teal)}
+.result-score{font-size:3.4rem;font-weight:900;color:var(--teal);letter-spacing:-.06em}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:14px}.stat strong{display:block;font-size:1.5rem;color:var(--navy)}
+.hidden{display:none!important}.small{font-size:.82rem}.checklist{display:grid;gap:11px;margin:18px 0}.notice{border:1px solid #f4d58d;background:#fffbeb;padding:13px;border-radius:13px;font-size:.9rem}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{position:static}.task-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{min-height:0}.shell{margin:14px auto}.topbar{padding:13px 18px}}
+@media(max-width:520px){.cards,.options,.matchgrid,.result-grid{grid-template-columns:1fr}.task-nav{grid-template-columns:1fr 1fr}.btnrow .btn{flex:1}.panel{padding:20px}.top-pill{display:none}}
+@media print{.topbar,.sidebar,.btnrow,footer{display:none!important}.layout{display:block}.panel{box-shadow:none;border:0}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="brand">VINSchool <small>SMART CITY · PRIMARY · ENGLISH / ESL</small></div><div class="top-pill">🎮 REVIEW QUEST · STAGE 4</div></header>
+<div class="shell">
+  <div id="registration" class="panel">
+    <div class="eyebrow">Welcome, learner!</div><h1>Let’s play the<br>Review Quest! 🚀</h1>
+    <p class="lead">Travel through family, school, homes, landscapes and food challenges. Complete each short task and collect your learning points.</p>
+    <div class="hero"><span class="hero-emoji">🧩 🌍 🍎</span><h2>Welcome to Your Interactive Lesson!</h2><p>Please enter your information before starting.</p><div class="field"><label for="studentName">Student name *</label><input id="studentName" autocomplete="name" maxlength="80" placeholder="Type your name"></div><div class="field"><label for="studentClass">Class *</label><select id="studentClass"><option value="">Choose your class</option><option>4B1</option><option>4B2</option><option>4B3</option><option>4B4</option></select></div><p id="regError" class="small" style="color:#b91c1c" role="alert"></p><button class="btn primary" id="startBtn">Start Lesson →</button></div>
+    <p class="hint">Your answers stay in this browser session. Download your results before refreshing or closing this page.</p>
+  </div>
+
+  <div id="learning" class="layout hidden">
+    <aside class="sidebar">
+      <div class="student-mini">👋 <strong id="miniName"></strong><br><span id="miniClass" class="muted"></span></div>
+      <div class="progress-label"><span>Lesson progress</span><strong id="progressText">0%</strong></div><div class="progress"><span id="progressFill"></span></div>
+      <div class="progress-label"><span id="taskCount">Task 1 of 10</span><span id="doneCount">0 done</span></div>
+      <nav class="task-nav" id="taskNav" aria-label="Lesson tasks"></nav>
+    </aside>
+    <main class="panel" id="taskPanel" aria-live="polite"></main>
+  </div>
+</div>
+<footer>Vinschool Smart City · Grade 4 ESL · Week 14 · End-of-Term Review</footer>
+<script>
+const $=id=>document.getElementById(id);
+const student={name:"",cls:""};
+const tasks=[
+ {id:"goals",name:"Your mission",required:true},
+ {id:"warmup",name:"Warm-up",required:true},
+ {id:"family",name:"Family detectives",required:true},
+ {id:"school",name:"School helpers",required:true},
+ {id:"homes",name:"Homes around us",required:true},
+ {id:"land",name:"Vietnam’s landscapes",required:true},
+ {id:"food",name:"Food listening",required:true},
+ {id:"fruit",name:"Fruit & five senses",required:true},
+ {id:"quiz",name:"Review quiz",required:true},
+ {id:"reflection",name:"Exit ticket",required:true},
+ {id:"homework",name:"Home challenge",required:false},
+ {id:"results",name:"Your results",required:true}
+];
+let current=0, completed=new Set(), responses={}, checks={}, activityScores={}, quizIndex=0, quizSubmitted=false;
+const quiz=[
+ ["A family has a mum, dad and two children. Another family has a mum and one child. What can we say?","They are exactly the same","They are different","They have no children","They are both school teams",1,"The number of children is different."],
+ ["Which word can describe a boy or a girl in a family?","Grandpa","Uncle","Cousin","Dad",2,"A cousin can be a boy or a girl."],
+ ["Who usually lends books to learners?","Cook","Librarian","Caretaker","School nurse",1,"A librarian helps learners borrow books."],
+ ["A school nurse ______ helps children who feel ill.","never","yesterday","often","blue",2,"Often is an adverb of frequency."],
+ ["Which home is usually a home with rooms in a shared building?","Apartment","Yurt","Stilt house","Tent",0,"An apartment is a home in a building."],
+ ["Which adjective best describes the Arctic?","Hot","Humid","Freezing","Dry and hot",2,"The Arctic is very cold or freezing."],
+ ["Which food is a drink?","Onion","Orange juice","Mushroom","Egg",1,"Orange juice is a drink."],
+ ["Which one is a fruit?","Carrot","Onion","Papaya","Mushroom",2,"Papaya is a fruit."],
+ ["Which adjective means a fruit has lots of juice?","Spiky","Juicy","Bitter","Smooth",1,"Juicy means containing a lot of juice."],
+ ["Which sense helps you hear an apple crunch?","Sight","Touch","Smell","Hearing",3,"We use our ears to hear a crunch."]
+];
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function start(){let n=$("studentName").value.trim(),c=$("studentClass").value;if(!n||!c){$("regError").textContent="Please enter your name and choose your class.";return;}student.name=n;student.cls=c;$("registration").classList.add("hidden");$("learning").classList.remove("hidden");$("miniName").textContent=n;$("miniClass").textContent="Grade 4 · "+c;render();}
+$("startBtn").addEventListener("click",start);
+function nav(){let nav=$("taskNav");nav.innerHTML=tasks.map((t,i)=>`<button class="${i===current?'active ':''}${completed.has(t.id)?'done':''}" data-go="${i}"><span class="num">${completed.has(t.id)?"✓":i+1}</span><span>${esc(t.name)}${!t.required?' · optional':''}</span></button>`).join("");nav.querySelectorAll("button").forEach(b=>b.onclick=()=>{let i=+b.dataset.go;let target=tasks[i];if(i>current&&!completed.has(target.id))return;if(i===tasks.length-1&&!allRequired())return;captureFields();current=i;render();});let req=tasks.filter(t=>t.required).length,done=tasks.filter(t=>t.required&&completed.has(t.id)).length,p=Math.round(done/req*100);$("progressText").textContent=p+"%";$("progressFill").style.width=p+"%";$("taskCount").textContent=`Task ${current+1} of ${tasks.length}`;$("doneCount").textContent=done+" done";}
+function shell(title,desc,time,body,prev=true,nextLabel="Complete task"){return `<div class="eyebrow">REVIEW QUEST · ${time}</div><h2>${title}</h2><p class="lead">${desc}</p>${body}<div class="btnrow">${prev?'<button class="btn secondary" id="prevBtn">← Previous</button>':'<span></span>'}<button class="btn primary" id="nextBtn">${nextLabel} →</button></div>`;}
+function captureFields(){["warmup","schoolSentence","homeLike","landSentence","learned","difficult","confidence","homeworkNote"].forEach(id=>{if($(id))responses[id]=$(id).value;});}
+function restoreFields(){["warmup","schoolSentence","homeLike","landSentence","learned","difficult","confidence","homeworkNote"].forEach(id=>{if($(id)&&responses[id]!==undefined)$(id).value=responses[id];});}
+function setNav(){if($("prevBtn"))$("prevBtn").onclick=()=>{captureFields();current=Math.max(0,current-1);render()};if($("nextBtn"))$("nextBtn").onclick=()=>{captureFields();let id=tasks[current].id;if(!validateTask(id))return;completed.add(id);if(current<tasks.length-1)current++;render();};}
+function validateTask(id){if(id==="warmup"&&!getVal("warmup"))return alert("Please write a short warm-up answer first."),false;if(id==="family"&&!checks.family)return alert("Please complete and check the family challenge."),false;if(id==="school"&&!checks.school)return alert("Please complete and check the school challenge."),false;if(id==="homes"&&!checks.homes)return alert("Please complete and check the homes challenge."),false;if(id==="land"&&!checks.land)return alert("Please complete and check the landscape challenge."),false;if(id==="food"&&!checks.food)return alert("Please listen and answer the food question."),false;if(id==="fruit"&&!checks.fruit)return alert("Please complete and check the fruit challenge."),false;if(id==="quiz"&&!quizSubmitted)return alert("Please submit your quiz before continuing."),false;if(id==="reflection"&&(!getVal("learned")||!getVal("difficult")))return alert("Please answer both reflection questions."),false;return true;}
+function getVal(id){return $(id)?.value?.trim()||""}
+function setAnswer(id,val){responses[id]=val}
+function render(){nav();let id=tasks[current].id,p=$("taskPanel");p.innerHTML=views[id]();setNav();if(id==="results")renderResults();restoreFields();}
+const views={
+goals:()=>shell("Your learning mission 🎯","Today you will revisit familiar words and practise describing, listening and reading. Take your time. You can go back and change your answers.", "2 MIN",`
+<div class="hero"><h3>By the end, I can…</h3><div class="checklist">
+${["review what I have learned for my end-of-term assessment","compare two families using simple sentences","talk about school workers and how often they help","describe homes and say what I like","describe Vietnamese landscapes with adjectives","identify eating habits from a short talk","recognise fruit and vegetable words from pictures","find details in the Apple poem"].map(x=>`<div class="goal"><span>⭐</span><span>I can ${x}.</span></div>`).join("")}</div></div>
+<div class="cards"><div class="card"><strong>🧠 Remember</strong><p class="small">Look carefully at pictures and word clues.</p></div><div class="card"><strong>💬 Try your best</strong><p class="small">Use the sentence starters if you need help.</p></div></div>`,false,"Start warm-up"),
+warmup:()=>shell("Warm-up: Look, think and say! 👀","Imagine two families are meeting at a park. What is one thing that could be the same and one thing that could be different?", "2 MIN",`
+<div class="cards"><div class="card soft"><span class="picture">👨‍👩‍👧‍👦</span><strong>Family A</strong><p class="small">Mum · Dad · two children</p></div><div class="card soft"><span class="picture">👩‍👧</span><strong>Family B</strong><p class="small">Mum · one child</p></div></div>
+<div class="field"><label for="warmup">Write one idea. You can use: “Both families…” or “Family A…, but Family B…”</label><textarea id="warmup" placeholder="Both families..."></textarea></div>`,true,"Save and continue"),
+family:()=>shell("Family detectives 👨‍👩‍👧‍👦","Choose the best answer for each family clue. Remember: both means two things are the same; but can show a difference.", "3 MIN",`
+<div class="card soft"><strong>Word bank</strong><div class="wordbank">${["mum","dad","brother","sister","grandma","grandpa","aunt","uncle","cousin"].map(w=>`<span class="word">${w}</span>`).join("")}</div></div>
+<div class="field"><label>1. A female parent is a…</label><div class="options" data-q="f1">${["dad","mum","uncle","brother"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="field"><label>2. A cousin can be…</label><div class="options" data-q="f2">${["only a boy","only a girl","a boy or a girl","a grandparent"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="field"><label>3. Complete the sentence: “Both families have a ____.”</label><select id="f3"><option value="">Choose</option><option>mum</option><option>grandpa</option><option>uncle</option></select></div>
+<button class="btn success" id="checkFamily">Check answers</button><div id="familyFeedback" aria-live="polite"></div>`,true,"Continue"),
+school:()=>shell("School helpers 🏫","Match each school worker to the way they help. Then practise using an adverb of frequency.", "3 MIN",`
+<div class="matchgrid">${[["Librarian","lends books"],["Cook","prepares lunch"],["School nurse","helps when I am ill"],["P.E. teacher","helps me keep fit"]].map(([a,b],i)=>`<div class="card"><strong>${["📚","👩‍🍳","🩺","🏃"][i]} ${a}</strong><select id="job${i}"><option value="">How do they help?</option>${["lends books","prepares lunch","helps when I am ill","helps me keep fit"].map(x=>`<option>${x}</option>`).join("")}</select></div>`).join("")}</div>
+<div class="field"><label>Choose the best word: “A caretaker ______ cleans and fixes things at school.”</label><div class="options" data-q="freq">${["never","often","yesterday","blue"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="field"><label for="schoolSentence">Write one sentence: “A ______ works in the ______. They often ______.”</label><input id="schoolSentence" placeholder="A librarian works in the library..."></div>
+<button class="btn success" id="checkSchool">Check answers</button><div id="schoolFeedback"></div>`,true,"Continue"),
+homes:()=>shell("Homes around us 🏠","Look at each home. Choose the correct home type, then choose an adjective that describes it.", "3 MIN",`
+<div class="cards">
+<div class="card"><span class="picture">🏢</span><strong>Home A</strong><p class="small">A home in a tall building with many homes.</p><select id="home1"><option value="">Home type</option><option>apartment</option><option>yurt</option><option>stilt house</option></select></div>
+<div class="card"><span class="picture">🛖</span><strong>Home B</strong><p class="small">A traditional round tent-like home.</p><select id="home2"><option value="">Home type</option><option>bungalow</option><option>yurt</option><option>apartment</option></select></div>
+</div>
+<div class="field"><label>Which adjective means “very small”?</label><div class="options" data-q="tiny">${["enormous","tiny","spacious","modern"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="field"><label for="homeLike">Finish: “I like a ______ home because it is ______.”</label><input id="homeLike" placeholder="I like a..."></div>
+<button class="btn success" id="checkHomes">Check answers</button><div id="homesFeedback"></div>`,true,"Continue"),
+land:()=>shell("Vietnam’s beautiful landscapes 🌄","Choose adjectives that match each place. Some adjectives can describe more than one place.", "3 MIN",`
+<div class="cards">
+<div class="card"><span class="picture">🏜️</span><strong>Desert</strong><p class="small">Choose two words.</p><div class="options" data-q="desert">${["dry","icy","hot","freezing"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="card"><span class="picture">⛰️</span><strong>Mountains</strong><p class="small">Choose one word.</p><div class="options" data-q="mountain">${["high","salty","crispy","spiky"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+</div>
+<div class="field"><label for="landSentence">Describe a Vietnamese landscape. Try: “The mountains are ______ and ______.”</label><input id="landSentence" placeholder="The mountains are..."></div>
+<button class="btn success" id="checkLand">Check answers</button><div id="landFeedback"></div>`,true,"Continue"),
+food:()=>shell("Food listening challenge 🍳","Listen to the short talk. You can replay it. Then answer the question. This is teacher-created listening practice.", "3 MIN",`
+<div class="hero"><div class="eyebrow">LISTEN CAREFULLY</div><span class="picture">🎧</span><h3>Sam’s breakfast</h3><p>Press the button to hear the talk. Listen for the food Sam eats and does not eat much.</p><button class="btn primary" id="playTalk">▶ Play the short talk</button> <button class="btn secondary" id="showTalk">Show words</button><p id="talkText" class="big-quote hidden">“For breakfast, I usually eat bread and an egg. I drink orange juice. I sometimes eat tomatoes, but I do not eat much cheese.”</p><p id="audioStatus" class="small muted" aria-live="polite"></p></div>
+<div class="field"><label>What does Sam drink?</label><div class="options" data-q="drink">${["Milk","Orange juice","Water","Apple juice"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="field"><label>What does Sam not eat much?</label><div class="options" data-q="little">${["Bread","Egg","Cheese","Tomatoes"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<button class="btn success" id="checkFood">Check listening</button><div id="foodFeedback"></div>`,true,"Continue"),
+fruit:()=>shell("Fruit and the five senses 🍎","Use the picture clues and adjectives. Then read the mini Apple poem and find its details.", "4 MIN",`
+<div class="cards"><div class="card soft"><span class="picture">🍍</span><strong>Pineapple</strong><p class="small">Spiky outside · juicy inside</p></div><div class="card soft"><span class="picture">🐉</span><strong>Dragon fruit</strong><p class="small">Colourful · soft inside</p></div><div class="card soft"><span class="picture">🥭</span><strong>Papaya</strong><p class="small">Soft · juicy</p></div><div class="card soft"><span class="picture">🍓</span><strong>Raspberry</strong><p class="small">Small · juicy</p></div><div class="card soft"><span class="picture">🥕</span><strong>Carrot</strong><p class="small">A vegetable</p></div><div class="card soft"><span class="picture">🧅</span><strong>Onion</strong><p class="small">A vegetable</p></div></div>
+<div class="field"><label>1. Which word means “full of juice”?</label><div class="options" data-q="juicy">${["bitter","juicy","spiky","salty"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="big-quote"><strong>Mini Apple Poem</strong><br>“An apple, round and red,<br>Grows on a tree above my head.<br>Its skin feels smooth, its smell is sweet,<br>It tastes so sweet, a lovely treat.<br>It makes a crunchy sound when I eat.”</div>
+<div class="field"><label>2. What sound does the apple make?</label><div class="options" data-q="crunch">${["A splash","A crunch","A whistle","A bell"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="field"><label>3. Which word describes how the apple feels?</label><div class="options" data-q="feel">${["Smooth","Spiky","Salty","Icy"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="field"><label>4. Which one is a vegetable?</label><div class="options" data-q="vegetable">${["Carrot","Papaya","Pineapple","Raspberry"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<div class="field"><label>5. What does the apple smell like?</label><div class="options" data-q="smell">${["Salty","Sweet","Spicy","Bitter"].map((x,i)=>`<button class="option" data-v="${i}">${x}</button>`).join("")}</div></div>
+<button class="btn success" id="checkFruit">Check fruit challenge</button><div id="fruitFeedback"></div>`,true,"Continue"),
+quiz:()=>quizView(),
+reflection:()=>shell("Your exit ticket ✍️","Think about today’s review. There are no right or wrong answers in your reflection.", "2 MIN",`
+<div class="field"><label for="learned">1. What is one thing you learned or remembered today? *</label><textarea id="learned" placeholder="Today I learned..."></textarea></div>
+<div class="field"><label for="difficult">2. Which topic was difficult for you? *</label><select id="difficult"><option value="">Choose one</option><option>Family and school</option><option>Homes and landscapes</option><option>Food and fruit</option><option>Nothing was difficult</option></select></div>
+<div class="field"><label for="confidence">3. How do you feel about the review?</label><select id="confidence"><option>😊 I feel confident</option><option>🙂 I need a little more practice</option><option>😕 I need help</option></select></div>`,true,"Finish reflection"),
+homework:()=>shell("Optional home challenge 🏡","This challenge is optional. It does not affect your lesson completion or quiz score.", "OPTIONAL · 5 MIN",`
+<div class="hero"><span class="picture">🍊</span><h3>My favourite fruit mini-poem</h3><ol><li>Choose a fruit grown in Vietnam.</li><li>Write its colour, smell, taste and feel.</li><li>Write a short four-line poem.</li><li>Read it to someone at home.</li></ol><p><strong>Sentence starters:</strong> “My fruit is…” · “It looks…” · “It smells…” · “It tastes…”</p></div>
+<div class="field"><label for="homeworkNote">Optional: Write the fruit you chose.</label><input id="homeworkNote" placeholder="I chose..."></div>`,true,"Go to results"),
+results:()=>`<div class="eyebrow">QUEST COMPLETE</div><h2>Well done, ${esc(student.name)}! 🎉</h2><p class="lead">You have reached the end of your Grade 4 ESL Review Quest.</p><div id="resultContent"></div>`
+};
+function optionHandler(){document.querySelectorAll(".options").forEach(group=>group.querySelectorAll(".option").forEach(b=>b.addEventListener("click",()=>{group.querySelectorAll(".option").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");group.dataset.answer=b.dataset.v;})));}
+function markFeedback(id,good,total,msg){let key=id.replace("Feedback","");activityScores[key]={earned:good,total};$(id).innerHTML=`<div class="feedback ${good===total?'good':'try'}">${msg} ${good}/${total} correct. You can review your choices and try again.</div>`;}
+function bindChecks(){
+ optionHandler();
+ if($("checkFamily"))$("checkFamily").onclick=()=>{let a=[document.querySelector('[data-q="f1"]').dataset.answer,document.querySelector('[data-q="f2"]').dataset.answer,$("f3").value];if(a.some(x=>x===undefined||x===""))return alert("Please answer all three questions.");let g=(a[0]==="1")+(a[1]==="2")+(a[2]==="mum");checks.family=true;responses.family=a.join(" | ");markFeedback("familyFeedback",g,3,"Nice work! Family words help us compare people.");};
+ if($("checkSchool"))$("checkSchool").onclick=()=>{let a=[0,1,2,3].map(i=>$("job"+i).value),f=document.querySelector('[data-q="freq"]').dataset.answer,s=getVal("schoolSentence");if(a.some(x=>!x)||f===undefined||!s)return alert("Complete the matches, choose a word and write a sentence.");let correct=["lends books","prepares lunch","helps when I am ill","helps me keep fit"];let g=a.filter((x,i)=>x===correct[i]).length+(f==="1");checks.school=true;responses.school=a.join(" | ")+"; frequency: "+["never","often","yesterday","blue"][+f]+"; sentence: "+s;markFeedback("schoolFeedback",g,5,"You know how school helpers support us.");};
+ if($("checkHomes"))$("checkHomes").onclick=()=>{let a=[$("home1").value,$("home2").value,document.querySelector('[data-q="tiny"]').dataset.answer],s=getVal("homeLike");if(a.some(x=>!x)||!s)return alert("Complete both home types, the adjective and your sentence.");let g=(a[0]==="apartment")+(a[1]==="yurt")+(a[2]==="1");checks.homes=true;responses.homes=a.join(" | ")+"; sentence: "+s;markFeedback("homesFeedback",g,3,"Great home descriptions!");};
+ if($("checkLand"))$("checkLand").onclick=()=>{let d=document.querySelector('[data-q="desert"]').dataset.answer,m=document.querySelector('[data-q="mountain"]').dataset.answer,s=getVal("landSentence");if(d===undefined||m===undefined||!s)return alert("Choose the landscape adjectives and write a sentence.");let g=(d==="0"||d==="2")+(m==="0");checks.land=true;responses.land="Desert: "+["dry","icy","hot","freezing"][+d]+"; mountain: "+["high","salty","crispy","spiky"][+m]+"; sentence: "+s;markFeedback("landFeedback",g,2,"Good thinking! Some places can have more than one suitable adjective.");};
+ if($("checkFood"))$("checkFood").onclick=()=>{let a=document.querySelector('[data-q="drink"]').dataset.answer,b=document.querySelector('[data-q="little"]').dataset.answer;if(a===undefined||b===undefined)return alert("Answer both listening questions.");let g=(a==="1")+(b==="2");checks.food=true;responses.food="Drink: "+["Milk","Orange juice","Water","Apple juice"][+a]+"; does not eat much: "+["Bread","Egg","Cheese","Tomatoes"][+b];markFeedback("foodFeedback",g,2,"You listened for key food details.");};
+ if($("checkFruit"))$("checkFruit").onclick=()=>{let a=document.querySelector('[data-q="juicy"]').dataset.answer,b=document.querySelector('[data-q="crunch"]').dataset.answer,c=document.querySelector('[data-q="feel"]').dataset.answer,d=document.querySelector('[data-q="vegetable"]').dataset.answer,e=document.querySelector('[data-q="smell"]').dataset.answer;if([a,b,c,d,e].some(x=>x===undefined))return alert("Answer all five fruit questions.");let g=(a==="1")+(b==="1")+(c==="0")+(d==="0")+(e==="1");checks.fruit=true;responses.fruit="Juicy: "+["bitter","juicy","spiky","salty"][+a]+"; sound: "+["A splash","A crunch","A whistle","A bell"][+b]+"; feel: "+["Smooth","Spiky","Salty","Icy"][+c]+"; vegetable: "+["Carrot","Papaya","Pineapple","Raspberry"][+d]+"; smell: "+["Salty","Sweet","Spicy","Bitter"][+e];markFeedback("fruitFeedback",g,5,"You used the poem and picture clues.");};
+ if($("playTalk"))$("playTalk").onclick=()=>{let t="For breakfast, I usually eat bread and an egg. I drink orange juice. I sometimes eat tomatoes, but I do not eat much cheese.";if("speechSynthesis"in window){speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(t));$("audioStatus").textContent="Playing the talk. Listen carefully."; }else{$("talkText").classList.remove("hidden");$("audioStatus").textContent="Audio reading is not supported in this browser. Use Show words."; }};
+ if($("showTalk"))$("showTalk").onclick=()=>$("talkText").classList.toggle("hidden");
+}
+function quizView(){let q=quiz[quizIndex],a=responses.quiz?.[quizIndex];return `<div class="eyebrow">10-QUESTION REVIEW QUIZ</div><div class="quiztop"><span>Question ${quizIndex+1} of ${quiz.length}</span><span>${Object.keys(responses.quiz||{}).length} answered</span></div><div class="qbar"><span style="width:${(quizIndex+1)/quiz.length*100}%"></span></div><h2>${esc(q[0])}</h2><div class="options" id="quizOptions">${q.slice(1,5).map((x,i)=>`<button class="option ${a===i?'selected':''}" data-v="${i}">${String.fromCharCode(65+i)}. ${esc(x)}</button>`).join("")}</div><div id="quizFeedback" class="small muted">${a!==undefined?"Your answer is saved.": "Choose one answer."}</div><div class="btnrow"><button class="btn secondary" id="quizPrev" ${quizIndex===0?'disabled':''}>← Previous</button><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn secondary" id="quizNext">${quizIndex===quiz.length-1?'Review answers':'Next question →'}</button><button class="btn success" id="submitQuiz">Submit quiz</button></div></div>`;}
+function bindQuiz(){let opts=$("quizOptions");opts.querySelectorAll("button").forEach(b=>b.onclick=()=>{responses.quiz=responses.quiz||{};responses.quiz[quizIndex]=+b.dataset.v;render();});$("quizPrev").onclick=()=>{quizIndex=Math.max(0,quizIndex-1);render()};$("quizNext").onclick=()=>{if(quizIndex<quiz.length-1){quizIndex++;render()}else{let missing=quiz.filter((q,i)=>responses.quiz?.[i]===undefined).length;$("quizFeedback").textContent=missing?`${missing} question(s) still unanswered.`:"All questions answered. Submit when ready.";}};$("submitQuiz").onclick=()=>{let missing=quiz.filter((q,i)=>responses.quiz?.[i]===undefined).length;if(missing)return alert(`Please answer all ${quiz.length} questions. ${missing} remaining.`);quizSubmitted=true;completed.add("quiz");let score=quiz.reduce((s,q,i)=>s+(responses.quiz[i]===q[5]?1:0),0);responses.quizScore=score;let details=quiz.map((q,i)=>`<p><strong>Q${i+1}: ${responses.quiz[i]===q[5]?"✓ Correct":"✗ Try again"}</strong> — ${esc(q[6])} Correct answer: <strong>${esc(q[q[5]+1])}</strong>.</p>`).join("");$("taskPanel").innerHTML=`<div class="eyebrow">QUIZ RESULTS</div><h2>Your quiz score</h2><div class="result-score">${score}/${quiz.length}</div><p>${Math.round(score/quiz.length*100)}% correct. ${score>=8?"Excellent work!": "Keep practising. You can retry the quiz."}</p><div class="card soft">${details}</div><div class="btnrow"><button class="btn secondary" id="retryQuiz">Retry quiz</button><button class="btn primary" id="quizContinue">Continue →</button></div>`;nav();$("retryQuiz").onclick=()=>{quizSubmitted=false;delete responses.quiz;quizIndex=0;render()};$("quizContinue").onclick=()=>{current++;render()};};}
+function renderResults(){let score=responses.quizScore??0,done=tasks.filter(t=>t.required&&completed.has(t.id)).length,req=tasks.filter(t=>t.required).length,needs=["warmup","reflection"].filter(k=>!responses[k]);$("resultContent").innerHTML=`<div class="hero"><div class="result-grid"><div class="stat"><span class="small muted">Student</span><strong style="font-size:1rem">${esc(student.name)}</strong></div><div class="stat"><span class="small muted">Class</span><strong>${esc(student.cls)}</strong></div><div class="stat"><span class="small muted">Quiz</span><strong>${score}/10</strong></div></div></div>
+<div class="cards"><div class="card"><strong>Required tasks</strong><p><span class="result-score" style="font-size:2rem">${done}/${req}</span></p></div><div class="card"><strong>Quiz percentage</strong><p><span class="result-score" style="font-size:2rem">${score*10}%</span></p></div></div>
+<h3>Activity completion</h3><table><tr><th>Task</th><th>Status</th></tr>${tasks.filter(t=>t.required).map(t=>`<tr><td>${esc(t.name)}</td><td>${completed.has(t.id)?"✓ Completed":"Not completed"}</td></tr>`).join("")}</table>
+<div class="notice" style="margin-top:18px"><strong>Teacher review:</strong> Written sentences and reflections are saved for your teacher to review. The quiz score is only the objectively marked part; it is not a complete measure of your English achievement.</div>
+<h3>Download your work</h3><p>Your Excel workbook will contain student information, activity responses, quiz answers, reflection and a summary.</p>
+<button class="btn success" id="downloadXlsx" style="font-size:1rem;padding:15px 20px">⬇ DOWNLOAD MY EXCEL RESULTS (.XLSX)</button><p id="downloadStatus" class="small muted" aria-live="polite"></p>
+<div class="hero"><h3>Submit your work to VinSchool LMS</h3><ol><li>Download your Excel results.</li><li>Find the downloaded file on your computer.</li><li>Open VinSchool LMS and go to the correct lesson assignment.</li><li>Upload the Excel file.</li><li>Click <strong>Submit Assignment</strong> (or the equivalent button).</li><li>Check that the LMS confirms your submission.</li></ol><strong>Your task is finished only after you have submitted your Excel file to your teacher through VinSchool LMS.</strong></div>`;
+$("downloadXlsx").onclick=downloadWorkbook;
+}
+function finalStatus(){return tasks.filter(t=>t.required).every(t=>completed.has(t.id))?"Completed":"Incomplete";}
+
+function allRequired(){return tasks.filter(t=>t.required).every(t=>completed.has(t.id));}
+function downloadWorkbook(){
+ const date=new Date(),localDate=new Intl.DateTimeFormat("en-CA").format(date);
+ const activityRows=[["Task","Question / Activity","Student Answer","Correct Answer","Result","Score"]];
+ const add=(task,prompt,key,correct="",result="For Teacher Review",score="")=>activityRows.push([task,prompt,responses[key]??"",correct,result,score]);
+ add("Warm-up","Compare two family pictures", "warmup");
+ add("Family detectives","Family vocabulary and comparison", "family","mum; a boy or a girl; mum", "Checked", activityScores.family?`${activityScores.family.earned}/${activityScores.family.total}`:"");
+ add("School helpers","Match workers and describe their jobs", "school","librarian lends books; cook prepares lunch; nurse helps when ill; P.E. teacher helps me keep fit; often", "Checked / teacher review for sentence", activityScores.school?`${activityScores.school.earned}/${activityScores.school.total}`:"");
+ add("Homes around us","Identify home types and describe a preference", "homes","apartment; yurt; tiny", "Checked / teacher review for sentence", activityScores.homes?`${activityScores.homes.earned}/${activityScores.homes.total}`:"");
+ add("Vietnam’s landscapes","Choose suitable landscape adjectives", "land","desert: dry or hot; mountain: high", "Checked / teacher review for sentence", activityScores.land?`${activityScores.land.earned}/${activityScores.land.total}`:"");
+ add("Food listening","Identify details about Sam’s eating habits", "food","Orange juice; cheese","Checked", activityScores.food?`${activityScores.food.earned}/${activityScores.food.total}`:"");
+ add("Fruit and five senses","Picture vocabulary and Apple poem details", "fruit","juicy; a crunch; smooth; carrot; sweet smell","Checked", activityScores.fruit?`${activityScores.fruit.earned}/${activityScores.fruit.total}`:"");
+ add("Exit ticket","What did you learn?", "learned");
+ add("Exit ticket","Which topic was difficult?", "difficult");
+ add("Optional home challenge","Fruit selected for poem","homeworkNote");
+ const quizRows=[["Question Number","Question","Student Answer","Correct Answer","Status","Points Earned","Total Points"],...quiz.map((q,i)=>{let a=responses.quiz?.[i],ok=a===q[5];return [i+1,q[0],a===undefined?"Not answered":q[a+1],q[q[5]+1],ok?"Correct":"Incorrect",ok?1:0,1]})];
+ const reflections=[["Prompt","Student Response"],["What is one thing you learned or remembered?",responses.learned||""],["Which topic was difficult?",responses.difficult||""],["How do you feel about the review?",responses.confidence||""]];
+ const info=[["Field","Value"],["Student Name",student.name],["Class",student.cls],["Grade","Grade 4"],["Subject","English / ESL"],["Unit","1–4"],["Week","14"],["Lesson Topic","ELS – End of Term Review"],["Completion Date",localDate],["Completion Status",finalStatus()]];
+ const summary=[["Metric","Value"],["Required tasks completed",tasks.filter(t=>t.required&&completed.has(t.id)).length],["Total required tasks",tasks.filter(t=>t.required).length],["Quiz score",`${responses.quizScore??0}/10`],["Quiz percentage",`${(responses.quizScore??0)*10}%`],["Activities needing teacher review","Written responses, oral-language evidence and reflection"],["Completion status",finalStatus()],["Completion date",localDate],["Assessment note","Quiz score represents only objectively gradable multiple-choice questions; it is not an overall achievement grade."]];
+ const sheets=[["Student Information",info],["Activity Results",activityRows],["Quiz Results",quizRows],["Reflection",reflections],["Summary",summary]];
+ try{let blob=makeXlsx(sheets),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`G4_${student.cls}_${safeName(student.name)}_Week14_Results.xlsx`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);$("downloadStatus").textContent="Your Excel workbook has been generated on this device. Remember to upload it to VinSchool LMS.";}catch(e){$("downloadStatus").textContent="The workbook could not be generated in this browser. Please try an updated Chrome, Edge or Safari browser.";console.error(e);}
+}
+function safeName(s){return s.normalize("NFKD").replace(/[^\w-]+/g,"_").replace(/^_+|_+$/g,"").slice(0,50)||"Student";}
+// Minimal standards-compliant XLSX writer: SpreadsheetML files packaged as an uncompressed ZIP.
+function xml(s){return String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&apos;");}
+function colName(n){let s="";while(n){let r=(n-1)%26;s=String.fromCharCode(65+r)+s;n=Math.floor((n-1)/26)}return s;}
+function makeXlsx(sheets){
+ const files={};
+ const escxml=xml;
+ const sheetXml=(rows)=>`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"/></sheetViews><sheetFormatPr defaultRowHeight="20"/><cols><col min="1" max="1" width="27" customWidth="1"/><col min="2" max="2" width="48" customWidth="1"/><col min="3" max="6" width="38" customWidth="1"/><col min="7" max="12" width="20" customWidth="1"/></cols><sheetData>${rows.map((row,ri)=>`<row r="${ri+1}">${row.map((v,ci)=>{let ref=colName(ci+1)+(ri+1),style=ri===0?1:0;return `<c r="${ref}" t="inlineStr" s="${style}"><is><t xml:space="preserve">${escxml(v)}</t></is></c>`}).join("")}</row>`).join("")}</sheetData><autoFilter ref="A1:${colName(Math.max(...rows.map(r=>r.length)))}${rows.length}"/></worksheet>`;
+ sheets.forEach((s,i)=>files[`xl/worksheets/sheet${i+1}.xml`]=sheetXml(s[1]));
+ files["[Content_Types].xml"]=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>${sheets.map((_,i)=>`<Override PartName="/xl/worksheets/sheet${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join("")}</Types>`;
+ files["_rels/.rels"]=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`;
+ files["xl/workbook.xml"]=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>${sheets.map((s,i)=>`<sheet name="${escxml(s[0])}" sheetId="${i+1}" r:id="rId${i+1}"/>`).join("")}</sheets></workbook>`;
+ files["xl/_rels/workbook.xml.rels"]=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${sheets.map((_,i)=>`<Relationship Id="rId${i+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i+1}.xml"/>`).join("")}<Relationship Id="rId${sheets.length+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`;
+ files["xl/styles.xml"]=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Aptos"/></font><font><b/><color rgb="FFFFFFFF"/><sz val="11"/><name val="Aptos"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF1D4ED8"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="2"><xf xfId="0" fontId="0" fillId="0" borderId="0" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf><xf xfId="0" fontId="1" fillId="2" borderId="0" applyAlignment="1"><alignment vertical="center" wrapText="1"/></xf></cellXfs></styleSheet>`;
+ return new Blob([zipStore(files)],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+}
+function crc32(bytes){let c=-1;for(let b of bytes){c^=b;for(let k=0;k<8;k++)c=(c>>>1)^((c&1)?0xEDB88320:0)}return (c^-1)>>>0;}
+function u16(n){return [n&255,(n>>>8)&255]}function u32(n){return [n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255]}
+function zipStore(files){
+ const enc=new TextEncoder(),parts=[],central=[];let offset=0;
+ for(const [name,content] of Object.entries(files)){let nb=enc.encode(name),data=enc.encode(content),crc=crc32(data),local=new Uint8Array([...u32(0x04034b50),...u16(20),...u16(0),...u16(0),...u16(0),...u16(0),...u32(crc),...u32(data.length),...u32(data.length),...u16(nb.length),...u16(0),...nb,...data]);parts.push(local);let c=new Uint8Array([...u32(0x02014b50),...u16(20),...u16(20),...u16(0),...u16(0),...u16(0),...u16(0),...u32(crc),...u32(data.length),...u32(data.length),...u16(nb.length),...u16(0),...u16(0),...u16(0),...u16(0),...u32(0),...u32(offset),...nb]);central.push(c);offset+=local.length;}
+ let centralSize=central.reduce((a,b)=>a+b.length,0),end=new Uint8Array([...u32(0x06054b50),...u16(0),...u16(0),...u16(central.length),...u16(central.length),...u32(centralSize),...u32(offset),...u16(0)]);return new Blob([...parts,...central,end]);
+}
+function bindChecks(){optionHandler(); /* rebound below after task rendering */ }
+const originalRender=render;
+render=function(){originalRender();bindChecks();if(tasks[current].id==="quiz")bindQuiz();if(tasks[current].id==="results"&& !allRequired()){$("taskPanel").insertAdjacentHTML("afterbegin",'<div class="feedback try">Some required tasks are not complete yet. Use the task list to finish them before downloading your results.</div>');$("downloadXlsx").disabled=true;}};
+</script>
+</body>
+</html>
